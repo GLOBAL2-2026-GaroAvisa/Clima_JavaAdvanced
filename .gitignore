@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### GaroAvisa ###
+application-local.properties
+.env
+*.env
+*.launch
+logs/
+*.log
+.DS_Store
+Thumbs.db
