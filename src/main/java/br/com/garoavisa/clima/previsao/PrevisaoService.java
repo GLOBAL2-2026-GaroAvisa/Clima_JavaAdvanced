@@ -35,6 +35,12 @@ public class PrevisaoService {
             publisher.publicar(montar(enderecos.get(i), respostas.get(i), atualizadoEm));
         }
     }
+    
+    // Pesquisa (feature 74): busca e DEVOLVE, sem publicar nada
+    public PrevisaoAtualizadaEvento buscarUm(EnderecoParaPrevisao endereco) {
+        List<OpenMeteoResposta> respostas = openMeteoClient.buscar(List.of(endereco));
+        return montar(endereco, respostas.get(0), Instant.now());
+    }
 
     // ---------- Montagem do E2 ----------
 
